@@ -115,14 +115,18 @@ async function fileHandle(files: File[] | null) {
 
   &-title {
     font-family: var(--font-primary);
+    @include fluid-text(32, 40);
     font-weight: 300;
     color: var(--color-text-primary);
+    text-align: center;
   }
 
   & .description {
     font-family: var(--font-primary);
+    @include fluid-text(14, 16);
     font-weight: 300;
     color: var(--color-muted);
+    text-align: center;
   }
 }
 

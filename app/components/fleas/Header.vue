@@ -19,14 +19,15 @@
 
 .title {
   font-family: var(--font-accent);
+  @include fluid-text(32, 40);
   font-weight: 700;
   color: var(--color-accent);
   text-align: center;
-  @include fluid-text(32, 40);
 }
 
 .subtitle {
   font-family: var(--font-primary);
+  @include fluid-text(14, 16);
   font-weight: 500;
   color: var(--color-muted);
   text-align: center;
