@@ -84,10 +84,15 @@ async function fileHandle(files: File[] | null) {
   border-style: dashed;
   transition-property: border-color, transform;
   transition-duration: var(--transition-duration);
+  -webkit-tap-highlight-color: transparent;
 
-  @include hover {
+  @include only-desktop-hover {
     border-color: var(--color-accent);
     transform: scale(1.01);
+  }
+
+  &:active {
+    background-color: var(--color-hover-bg);
   }
 }
 
