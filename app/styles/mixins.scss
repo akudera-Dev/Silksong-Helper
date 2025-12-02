@@ -1,7 +1,7 @@
 @use "./functions.scss" as *;
 
 @mixin fluid-text($min, $max) {
-  font-size: u-clamp($min, 1200, $max);
+  font-size: u-clamp($min, 940, $max);
 }
 
 @mixin hover {
@@ -22,4 +22,10 @@
   border: 2px solid var(--color-border);
   border-radius: var(--border-radius-lg);
   background-color: var(--color-plate-bg);
+}
+
+@mixin button-reset {
+  background-color: transparent;
+  border: none;
+  padding: 0;
 }

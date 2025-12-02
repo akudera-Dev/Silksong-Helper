@@ -1,5 +1,6 @@
 <template>
   <FleasHeader />
+  <FleasFileUpload />
 </template>
 
 <script setup lang="ts"></script>
