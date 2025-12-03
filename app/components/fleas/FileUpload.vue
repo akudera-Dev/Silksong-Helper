@@ -1,6 +1,6 @@
 <template>
   <Teleport to="body">
-    <div class="overlay" v-if="!isFileUploaded && isOverDropZone">
+    <div class="overlay" v-if="isOverDropZone">
       <IconsUploadSVG class="label-icon label-icon--uploading" width="150" />
     </div>
   </Teleport>
