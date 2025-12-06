@@ -14,7 +14,6 @@
   flex-direction: column;
   align-items: center;
   row-gap: 8px;
-  margin-top: 32px;
 }
 
 .title {

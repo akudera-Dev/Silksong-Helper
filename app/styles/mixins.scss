@@ -27,7 +27,7 @@
 }
 
 @mixin plate-style {
-  border: 2px solid var(--color-border);
+  border: var(--border-primary);
   border-radius: var(--border-radius-lg);
   background-color: var(--color-plate-bg);
 }
