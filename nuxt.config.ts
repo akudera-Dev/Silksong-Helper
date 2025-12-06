@@ -16,4 +16,11 @@ export default defineNuxtConfig({
       ],
     },
   },
+  routeRules: {
+    "/": { redirect: "/fleas" },
+    "/fleas": { prerender: true },
+  },
+  devServer: {
+    host: "",
+  },
 });

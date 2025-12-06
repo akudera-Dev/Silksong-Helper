@@ -3,11 +3,21 @@
   <FleasFileUpload />
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+useHead({
+  bodyAttrs: {
+    class: "fleas-page",
+  },
+});
+</script>
 
 <style lang="scss">
-body {
+body.fleas-page {
   background-color: var(--color-root);
-  overflow: hidden;
+  padding-block: 32px;
+
+  &:has(.overlay) {
+    overflow: hidden;
+  }
 }
 </style>
