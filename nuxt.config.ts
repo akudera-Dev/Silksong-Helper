@@ -4,18 +4,6 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["@pinia/nuxt"],
   css: ["@/styles/main.scss"],
-  app: {
-    head: {
-      title: "Fleas Helper",
-      link: [
-        {
-          rel: "icon",
-          type: "image/png",
-          href: "/favicon.png",
-        },
-      ],
-    },
-  },
   routeRules: {
     "/": { redirect: "/fleas" },
     "/fleas": { prerender: true },

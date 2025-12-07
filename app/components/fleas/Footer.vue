@@ -3,7 +3,7 @@
     <div class="footer-inner">
       <p>
         Site design and code © <time datetime="2025">2025</time> by
-        <a href="https://github.com/akudera">akudera</a>
+        <a href="https://github.com/akudera" target="_blank">akudera</a>
       </p>
     </div>
   </footer>
