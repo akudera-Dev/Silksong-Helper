@@ -1,12 +1,42 @@
 # Silksong Flea Location Helper
 
-## Project Overview
+## 🚀 Project Overview
 
 This project is web tool designed to help players of "Hollow Knight: Silksong" track their progress in collecting "fleas". It parses save files to identify which fleas have been collected and provides links to Map Genie.
 
 > **Note**: This project is currently a Work in Progress.
 
-## Features & Roadmap
+## ✅ Curent Result
+
+<img src="./Preview.jpg" width="500"/>
+
+## 🛠️ Technical Stack
+
+<div>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">
+    <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"/>
+  </a>
+  <a href="https://sass-lang.com/" target="_blank">
+    <img src="https://img.shields.io/badge/SCSS-CC6699?style=for-the-badge&logo=sass&logoColor=white" alt="SCSS"/>
+  </a>
+  <a href="https://www.typescriptlang.org/" target="_blank">
+    <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"/>
+  </a>
+  <a href="https://nuxt.com/" target="_blank">
+    <img src="https://img.shields.io/badge/Nuxt-002E3B?style=for-the-badge&logo=nuxt&logoColor=00DC82" alt="Nuxt"/>
+  </a>
+  <a href="https://vuejs.org/" target="_blank">
+    <img src="https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white" alt="Vue.js"/>
+  </a>
+  <a href="https://vueuse.org/" target="_blank">
+    <img src="https://img.shields.io/badge/VueUse-647EFF?style=for-the-badge&logo=vueuse&logoColor=white" alt="VueUse"/>
+  </a>
+  <a href="https://pinia.vuejs.org/" target="_blank">
+    <img src="https://img.shields.io/badge/Pinia-F28D1A?style=for-the-badge&logo=pinia&logoColor=white" alt="Pinia"/>
+  </a>
+</div>
+
+## 🗺️ Features & Roadmap
 
 ### 1. Save File Parsing
 
@@ -36,9 +66,3 @@ This project is web tool designed to help players of "Hollow Knight: Silksong" t
 - [ ] **Local Storage**: Save last file.
 - [ ] **History**: Store recently uploaded files for quick access.
 - [ ] **PWA Support**: Installable as an offline-capable app.
-
-## Technical Stack
-
-- **Framework**: [Nuxt 3](https://nuxt.com/)
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
-- **Styling**: [SCSS](https://sass-lang.com/)
