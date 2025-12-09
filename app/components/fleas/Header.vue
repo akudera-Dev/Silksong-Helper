@@ -39,4 +39,14 @@ hr {
   border: none;
   background-color: var(--color-accent);
 }
+
+@media (max-width: 620px) {
+  .header {
+    row-gap: 4px;
+  }
+
+  hr {
+    margin-top: 20px;
+  }
+}
 </style>
