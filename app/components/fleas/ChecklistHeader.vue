@@ -90,9 +90,10 @@ const props = defineProps<IProps>();
 }
 
 .filter-button {
+  --background-color: var(--color-light);
   padding: 4px 17px;
   border: none;
-  background-color: var(--color-light);
+  background-color: var(--background-color);
   font-family: var(--font-primary);
   @include fluid-text(14, 16);
   border-radius: var(--border-radius-md);
@@ -106,7 +107,8 @@ const props = defineProps<IProps>();
   }
 
   &.active {
-    background-color: var(--color-accent);
+    --background-color: var(--color-accent);
+    background-color: var(--background-color);
     color: var(--color-text-primary);
   }
 }

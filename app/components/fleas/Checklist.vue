@@ -108,6 +108,7 @@ function onStateButtonClick(fleaKeyName: string) {
   margin-top: 15px;
   @include plate-style;
   overflow: auto;
+  scroll-behavior: smooth;
 }
 
 .not-found {

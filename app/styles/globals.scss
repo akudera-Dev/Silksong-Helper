@@ -1,0 +1,6 @@
+:focus-visible {
+  outline-width: 2px;
+  outline-color: var(--background-color, currentColor);
+  outline-offset: 2px;
+  outline-style: dashed;
+}
