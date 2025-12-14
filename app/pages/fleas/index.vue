@@ -16,11 +16,6 @@ useHead({
   title: "Silksong Flea Helper | Interactive Tracker & Checklist",
   link: [
     {
-      rel: "icon",
-      type: "image/png",
-      href: "/favicon.png",
-    },
-    {
       rel: "canonical",
       href: "https://fleas-helper.vercel.app/fleas",
     },

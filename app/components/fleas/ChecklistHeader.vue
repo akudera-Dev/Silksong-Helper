@@ -96,6 +96,7 @@ const props = defineProps<IProps>();
   background-color: var(--background-color);
   font-family: var(--font-primary);
   @include fluid-text(14, 16);
+  color: var(--color-text-secondary);
   border-radius: var(--border-radius-md);
   transition-property: background-color, color;
   transition-duration: var(--transition-duration);
