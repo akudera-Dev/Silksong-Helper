@@ -5,11 +5,6 @@ export default defineNuxtConfig({
       link: [
         {
           rel: "icon",
-          type: "image/x-icon",
-          href: "/favicon.ico",
-        },
-        {
-          rel: "icon",
           type: "image/png",
           sizes: "96x96",
           href: "/favicon.png",
@@ -71,13 +66,7 @@ export default defineNuxtConfig({
           src: "/web-app-manifest-512x512.png",
           sizes: "512x512",
           type: "image/png",
-          purpose: "any maskable",
-        },
-        {
-          src: "/favicon.png",
-          sizes: "96x96",
-          type: "image/png",
-          purpose: "any",
+          purpose: "maskable",
         },
       ],
     },
