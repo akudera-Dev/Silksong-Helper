@@ -1,10 +1,10 @@
 <template>
   <NuxtLayout name="helper">
-    <DataFileUpload />
+    <DataFileUpload :data-update="dataUpdate" />
     <DataChecklist
       title="Flea checklist"
       :items="FILE_DATA.fleas"
-      :items-status="fileDataStatus"
+      :items-status="fileDataStatus.fleas"
       @toggle-status="toggleItem"
     />
   </NuxtLayout>
@@ -20,11 +20,21 @@ definePageMeta({
 });
 
 const fileDataStore = useFileData();
-const { fileDataStatus } = storeToRefs(fileDataStore);
+const { fileDataStatus, fileContext } = storeToRefs(fileDataStore);
 
 function toggleItem(key: string) {
-  if (Object.hasOwn(fileDataStatus.value, key)) {
-    fileDataStatus.value[key] = !fileDataStatus.value[key];
+  if (Object.hasOwn(fileDataStatus.value.fleas, key)) {
+    fileDataStatus.value.fleas[key] = !fileDataStatus.value.fleas[key];
+  }
+}
+
+function dataUpdate() {
+  if (fileContext.value?.playerData) {
+    Object.entries(fileContext.value.playerData).forEach(([key, value]) => {
+      if (key in fileDataStatus.value.fleas) {
+        fileDataStatus.value.fleas[key] = value as boolean;
+      }
+    });
   }
 }
 

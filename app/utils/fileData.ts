@@ -118,6 +118,88 @@ const FILE_DATA = {
       mapCoordinates: "478413",
     },
   },
+  masks: {
+    Crawl_02: {
+      biome: "Warmways",
+      mapCoordinates: "478091",
+    },
+    Dock_08: {
+      biome: "Deep Docks",
+      mapCoordinates: "477901",
+    },
+    Bone_East_20: {
+      biome: "Far Fields",
+      mapCoordinates: "477975",
+    },
+    Shellwood_14: {
+      biome: "The Marrow",
+      mapCoordinates: "478177",
+    },
+    Weave_05b: {
+      biome: "The Marrow",
+      mapCoordinates: "478233",
+    },
+    Song_09: {
+      biome: "Choral Chambers",
+      mapCoordinates: "478615",
+    },
+    Library_05: {
+      biome: "Whispering Vaults",
+      mapCoordinates: "478671",
+    },
+    Bone_East_LavaChallenge: {
+      biome: "Far Fields",
+      mapCoordinates: "478841",
+    },
+    Peak_04c: {
+      biome: "Mount Fay",
+      mapCoordinates: "479038",
+    },
+    Slab_17: {
+      biome: "The Slab",
+      mapCoordinates: "479001",
+    },
+    Shadow_13: {
+      biome: "Bilewater",
+      mapCoordinates: "478849",
+    },
+    Wisp_07: {
+      biome: "Wisp Thicket",
+      mapCoordinates: "479151",
+    },
+    Coral_19b: {
+      biome: "Blasted Steps",
+      mapCoordinates: "478498",
+    },
+    Peak_06: {
+      biome: "Mount Fay",
+      mapCoordinates: "479460",
+    },
+    PurchasedBonebottomHeartPiece: {
+      biome: "Moss Grotto",
+      mapCoordinates: "477840",
+    },
+    MerchantEnclaveShellFragment: {
+      biome: "Choral Chambers",
+      mapCoordinates: "478879",
+    },
+    "Beastfly Hunt": {
+      biome: "Bellhart",
+      mapCoordinates: "478800",
+    },
+    "Sprintmaster Race": {
+      biome: "Far Fields",
+      mapCoordinates: "479194",
+    },
+    "Destroy Thread Cores": {
+      biome: "Bellhart",
+      mapCoordinates: "479449",
+    },
+    "Ant Trapper": {
+      biome: "Bellhart",
+      mapCoordinates: "479447",
+    },
+  },
 } as const;
 
 export { FILE_DATA };

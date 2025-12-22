@@ -21,7 +21,13 @@
 
 <script setup lang="ts">
 import { useDropZone } from "@vueuse/core";
+import z from "zod";
+import { fileContextScheme } from "~/schemes/fileData";
 import { useFileData } from "~/stores/fileData";
+
+const props = defineProps<{
+  dataUpdate: () => any;
+}>();
 
 const fileDataStore = useFileData();
 const { file, fileContext } = storeToRefs(fileDataStore);
@@ -53,14 +59,23 @@ async function fileHandle(files: File[] | null) {
     errorMessage.value = null;
 
     const context = await FileDecode.getDecode(uploadedFile);
+    const parsedContext = fileContextScheme.parse(context);
 
-    if (context) {
+    if (parsedContext) {
       file.value = uploadedFile;
-      fileContext.value = context;
+      fileContext.value = parsedContext;
+      props.dataUpdate();
     }
   } catch (error) {
     console.error(error);
-    errorMessage.value = `Error: File is corrupted or you uploaded not a *.dat file`;
+    if (error instanceof z.ZodError) {
+      console.warn(error);
+
+      errorMessage.value =
+        "Error: It seems to your save file is corrupted. Its structure is broken";
+    } else {
+      errorMessage.value = "Error: File is corrupted or you uploaded not a *.dat file";
+    }
   }
 }
 </script>

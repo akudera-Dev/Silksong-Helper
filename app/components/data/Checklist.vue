@@ -39,8 +39,8 @@
         <p>
           {{
             filteringBy === "found"
-              ? "You haven't found a single item yet :("
-              : "You have found all items!"
+              ? "You haven't found anything yet :("
+              : "You've found everything you could!"
           }}
         </p>
       </div>
@@ -168,7 +168,7 @@ function onStateButtonClick(itemKeyName: string) {
       transition: color var(--transition-duration);
 
       @include hover {
-        color: var(--color-text-accent);
+        color: var(--color-text-hover);
       }
     }
   }

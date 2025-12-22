@@ -38,6 +38,7 @@ function closeFileInfo() {
 }
 
 .error-message {
+  @include fluid-text(16, 18);
   color: var(--color-text-error);
 }
 
@@ -50,7 +51,7 @@ function closeFileInfo() {
   transition: color var(--transition-duration);
 
   @include hover {
-    color: var(--color-accent);
+    color: var(--color-text-accent);
   }
 }
 </style>
