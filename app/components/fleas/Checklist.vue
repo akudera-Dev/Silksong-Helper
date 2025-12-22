@@ -2,14 +2,14 @@
   <div class="fleas-checklist container">
     <FleasChecklistHeader
       :filtering-by="filteringBy"
-      :fleasStatus="fleasStatus"
+      :fleas-status="fleasStatus"
       @filtering-change="changeFiltering"
     />
     <div class="checklist">
       <TransitionGroup
+        v-if="filteringBy === 'all' || fleasToDisplay.length > 0"
         tag="div"
         :name="transitionName"
-        v-if="filteringBy === 'all' || fleasToDisplay.length > 0"
       >
         <div v-for="fleaDetails in fleasToDisplay" :key="fleaDetails.keyName" class="flea-details">
           <div>
@@ -25,16 +25,16 @@
           <ClientOnly>
             <button
               type="button"
-              @click="() => onStateButtonClick(fleaDetails.keyName)"
               class="state-button"
               :class="fleaDetails.isFound ? 'found' : 'missing'"
+              @click="() => onStateButtonClick(fleaDetails.keyName)"
             >
               {{ fleaDetails.isFound ? "Found" : "Missing" }}
             </button>
           </ClientOnly>
         </div>
       </TransitionGroup>
-      <div class="not-found" v-else>
+      <div v-else class="not-found">
         <p>
           {{
             filteringBy === "found"

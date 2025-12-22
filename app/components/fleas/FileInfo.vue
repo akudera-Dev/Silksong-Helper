@@ -1,8 +1,12 @@
 <template>
   <div class="fleas-info">
-    <span class="save-file" v-if="!!file">{{ file.name }}</span>
-    <div class="error-message" v-else><slot></slot></div>
-    <button type="button" class="close-button" @click="closeFileInfo"><IconsCross /></button>
+    <span v-if="!!file" class="save-file">{{ file.name }}</span>
+    <div v-else class="error-message">
+      <slot />
+    </div>
+    <button type="button" class="close-button" @click="closeFileInfo">
+      <IconsCross />
+    </button>
   </div>
 </template>
 

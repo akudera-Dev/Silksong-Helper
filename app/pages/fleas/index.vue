@@ -1,8 +1,10 @@
 <template>
-  <FleasHeader />
-  <FleasFileUpload />
-  <FleasChecklist />
-  <FleasFooter />
+  <div>
+    <FleasHeader />
+    <FleasFileUpload />
+    <FleasChecklist />
+    <FleasFooter />
+  </div>
 </template>
 
 <script setup lang="ts">

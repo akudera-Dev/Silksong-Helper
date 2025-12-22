@@ -58,7 +58,7 @@ interface IProps {
   fleasStatus: Record<string, boolean>;
 }
 
-const props = defineProps<IProps>();
+defineProps<IProps>();
 </script>
 
 <style scoped lang="scss">
