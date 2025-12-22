@@ -20,9 +20,9 @@
 </template>
 
 <script setup lang="ts">
-import { useDropZone } from '@vueuse/core';
-import { getDecodedFile } from '~/utils/fileDecode';
-import { useFleasDetails } from '~/stores/fleasDetails';
+import { useDropZone } from "@vueuse/core";
+import { getDecodedFile } from "~/utils/fileDecode";
+import { useFleasDetails } from "~/stores/fleasDetails";
 
 const fleasDetailsStore = useFleasDetails();
 const { file, fileContext } = storeToRefs(fleasDetailsStore);
@@ -67,7 +67,7 @@ async function fileHandle(files: File[] | null) {
 </script>
 
 <style scoped lang="scss">
-@use '@/styles/mixins.scss' as *;
+@use "@/styles/mixins.scss" as *;
 .overlay {
   position: fixed;
   top: 0;

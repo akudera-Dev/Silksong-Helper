@@ -1,9 +1,9 @@
 ---
 name: Feature issue template
 about: Create new functionality
-title: 'feature: '
+title: "feature: "
 labels: feature
-assignees: ''
+assignees: ""
 ---
 
 ## Description

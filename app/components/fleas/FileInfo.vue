@@ -11,21 +11,21 @@
 </template>
 
 <script setup lang="ts">
-import { useFleasDetails } from '~/stores/fleasDetails';
+import { useFleasDetails } from "~/stores/fleasDetails";
 
 const fleasDetailsStore = useFleasDetails();
 const { file } = storeToRefs(fleasDetailsStore);
 
-const emits = defineEmits(['clearErrors']);
+const emits = defineEmits(["clearErrors"]);
 
 function closeFileInfo() {
-  emits('clearErrors');
+  emits("clearErrors");
   file.value = null;
 }
 </script>
 
 <style scoped lang="scss">
-@use '@/styles/mixins.scss' as *;
+@use "@/styles/mixins.scss" as *;
 
 .fleas-info {
   @include plate-style;

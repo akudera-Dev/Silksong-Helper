@@ -1,6 +1,6 @@
-import * as aesjs from 'aes-js';
+import * as aesjs from "aes-js";
 
-const KEY_STRING = 'UKu52ePUBwetZ9wNX88o54dnfKRu0T1l' as const;
+const KEY_STRING = "UKu52ePUBwetZ9wNX88o54dnfKRu0T1l" as const;
 
 /**
  * @throws { SyntaxError } via parsing invalid JSON from file.
@@ -13,7 +13,7 @@ export async function getDecodedFile(file: File) {
 
   if (!matches) {
     throw new Error(
-      'Base64 string was not found in the file. The file may be corrupted or unencrypted.'
+      "Base64 string was not found in the file. The file may be corrupted or unencrypted."
     );
   }
 

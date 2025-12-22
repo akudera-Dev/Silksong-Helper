@@ -1,9 +1,9 @@
 ---
 name: bug issue template
 about: But Report
-title: 'bugfix: '
+title: "bugfix: "
 labels: bug
-assignees: ''
+assignees: ""
 ---
 
 ## Bug description
