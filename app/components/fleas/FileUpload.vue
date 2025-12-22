@@ -21,6 +21,7 @@
 
 <script setup lang="ts">
 import { useDropZone } from '@vueuse/core';
+import { getDecodedFile } from '~/utils/fileDecode';
 import { useFleasDetails } from '~/stores/fleasDetails';
 
 const fleasDetailsStore = useFleasDetails();
@@ -52,7 +53,7 @@ async function fileHandle(files: File[] | null) {
   try {
     errorMessage.value = null;
 
-    const context = await FileDecode.getDecode(uploadedFile);
+    const context = await getDecodedFile(uploadedFile);
 
     if (context) {
       file.value = uploadedFile;
