@@ -1,5 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  modules: ["@pinia/nuxt", "@vite-pwa/nuxt", "@nuxt/eslint"],
+  devtools: { enabled: true },
   app: {
     head: {
       link: [
@@ -35,9 +37,6 @@ export default defineNuxtConfig({
       ],
     },
   },
-  compatibilityDate: "2025-07-15",
-  devtools: { enabled: true },
-  modules: ["@pinia/nuxt", "@vite-pwa/nuxt"],
   css: ["@/styles/main.scss"],
   routeRules: {
     "/": { redirect: "/fleas" },
@@ -45,6 +44,12 @@ export default defineNuxtConfig({
   },
   devServer: {
     host: "",
+  },
+  compatibilityDate: "2025-07-15",
+  eslint: {
+    config: {
+      stylistic: false,
+    },
   },
   pwa: {
     registerType: "autoUpdate",

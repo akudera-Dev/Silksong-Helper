@@ -81,8 +81,6 @@ body.fleas-page {
 
   & div#__nuxt,
   & div#__nuxt > div {
-    display: flex;
-    flex-direction: column;
     min-height: 100lvh;
   }
 

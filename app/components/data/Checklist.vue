@@ -8,9 +8,9 @@
     />
     <div class="checklist">
       <TransitionGroup
+        v-if="filteringBy === 'all' || itemsToDisplay.length > 0"
         tag="div"
         :name="transitionName"
-        v-if="filteringBy === 'all' || itemsToDisplay.length > 0"
       >
         <div v-for="item in itemsToDisplay" :key="item.keyName" class="item-details">
           <div>
@@ -26,16 +26,16 @@
           <ClientOnly>
             <button
               type="button"
-              @click="onStateButtonClick(item.keyName)"
               class="state-button"
               :class="item.isFound ? 'found' : 'missing'"
+              @click="onStateButtonClick(item.keyName)"
             >
               {{ item.isFound ? "Found" : "Missing" }}
             </button>
           </ClientOnly>
         </div>
       </TransitionGroup>
-      <div class="not-found" v-else>
+      <div v-else class="not-found">
         <p>
           {{
             filteringBy === "found"

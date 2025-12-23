@@ -1,6 +1,6 @@
 <template>
   <Teleport to="body">
-    <div class="overlay" v-if="isOverDropZone">
+    <div v-if="isOverDropZone" class="overlay">
       <IconsUploadSVG class="label-icon label-icon--uploading" width="150" />
     </div>
   </Teleport>
@@ -13,7 +13,7 @@
         <IconsUploadSVG class="label-icon" />
         <h2 class="label-title">Upload Save File</h2>
         <span class="description">Drag and drop or chose your save file</span>
-        <input type="file" id="file-upload" class="visually-hidden" @change="onChange" />
+        <input id="file-upload" type="file" class="visually-hidden" @change="onChange" />
       </label>
     </template>
   </section>
@@ -24,9 +24,10 @@ import { useDropZone } from "@vueuse/core";
 import z from "zod";
 import { fileContextScheme } from "~/schemes/fileData";
 import { useFileData } from "~/stores/fileData";
+import { getDecodedFile } from "~/utils/fileDecode";
 
 const props = defineProps<{
-  dataUpdate: () => any;
+  dataUpdate: () => void;
 }>();
 
 const fileDataStore = useFileData();
@@ -58,7 +59,7 @@ async function fileHandle(files: File[] | null) {
   try {
     errorMessage.value = null;
 
-    const context = await FileDecode.getDecode(uploadedFile);
+    const context = await getDecodedFile(uploadedFile);
     const parsedContext = fileContextScheme.parse(context);
 
     if (parsedContext) {
@@ -108,7 +109,9 @@ async function fileHandle(files: File[] | null) {
   height: 100%;
   padding-block: 60px;
   border-style: dashed;
-  transition: border-color var(--transition-duration), transform var(--transition-duration),
+  transition:
+    border-color var(--transition-duration),
+    transform var(--transition-duration),
     background-color var(--transition-duration-short);
   -webkit-tap-highlight-color: transparent;
 
