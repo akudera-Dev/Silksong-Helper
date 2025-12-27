@@ -30,6 +30,10 @@ const props = defineProps<{
   dataUpdate: () => void;
 }>();
 
+onMounted(() => {
+  props.dataUpdate();
+});
+
 const fileDataStore = useFileData();
 const { file, fileContext } = storeToRefs(fileDataStore);
 

@@ -1,17 +1,21 @@
 <template>
-  <NuxtLayout name="helper">
-    <DataFileUpload :data-update="dataUpdate" />
-    <DataChecklist
-      title="Flea checklist"
-      :items="FILE_DATA.masks"
-      :items-status="fileDataStatus.masks"
-      @toggle-status="toggleItem"
-    />
-  </NuxtLayout>
+  <div class="masks-page">
+    <NuxtLayout name="helper">
+      <DataFileUpload :data-update="dataUpdate" />
+      <DataChecklist
+        title="Flea checklist"
+        :items="FILE_DATA.masks"
+        :items-status="fileDataStatus.masks"
+        @toggle-status="toggleItem"
+      />
+    </NuxtLayout>
+  </div>
 </template>
 
 <script setup lang="ts">
 definePageMeta({
+  layout: "with-sidenav",
+  pageTransition: { name: "page", mode: "out-in" },
   title: "SilkSong Masks Helper",
   description: "Track mask shards and view them on the interactive map",
 });
@@ -67,9 +71,6 @@ useHead({
   htmlAttrs: {
     lang: "en",
   },
-  bodyAttrs: {
-    class: "masks-page",
-  },
   title: "Silksong Mask shards Helper | Interactive Tracker & Checklist",
   link: [
     {
@@ -97,19 +98,7 @@ useSeoMeta({
 </script>
 
 <style lang="scss">
-body.masks-page {
-  position: relative;
-  background-color: var(--color-root);
-
-  &:has(.overlay) {
-    overflow: hidden;
-  }
-
-  & div#__nuxt,
-  & div#__nuxt > div {
-    min-height: 100lvh;
-  }
-
+body:has(.masks-page) {
   --color-root: #101012;
   --color-accent: #ffffff;
   --color-button: #ffffff;

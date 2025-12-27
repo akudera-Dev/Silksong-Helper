@@ -23,16 +23,14 @@
               {{ item.biome }}
             </a>
           </div>
-          <ClientOnly>
-            <button
-              type="button"
-              class="state-button"
-              :class="item.isFound ? 'found' : 'missing'"
-              @click="onStateButtonClick(item.keyName)"
-            >
-              {{ item.isFound ? "Found" : "Missing" }}
-            </button>
-          </ClientOnly>
+          <button
+            type="button"
+            class="state-button"
+            :class="item.isFound ? 'found' : 'missing'"
+            @click="onStateButtonClick(item.keyName)"
+          >
+            {{ item.isFound ? "Found" : "Missing" }}
+          </button>
         </div>
       </TransitionGroup>
       <div v-else class="not-found">

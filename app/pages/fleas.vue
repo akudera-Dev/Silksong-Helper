@@ -1,13 +1,15 @@
 <template>
-  <NuxtLayout name="helper">
-    <DataFileUpload :data-update="dataUpdate" />
-    <DataChecklist
-      title="Flea checklist"
-      :items="FILE_DATA.fleas"
-      :items-status="fileDataStatus.fleas"
-      @toggle-status="toggleItem"
-    />
-  </NuxtLayout>
+  <div class="fleas-page">
+    <NuxtLayout name="helper">
+      <DataFileUpload :data-update="dataUpdate" />
+      <DataChecklist
+        title="Flea checklist"
+        :items="FILE_DATA.fleas"
+        :items-status="fileDataStatus.fleas"
+        @toggle-status="toggleItem"
+      />
+    </NuxtLayout>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -15,6 +17,8 @@ import { useFileData } from "~/stores/fileData";
 import { FILE_DATA } from "~/utils/fileData";
 
 definePageMeta({
+  layout: "with-sidenav",
+  pageTransition: { name: "page", mode: "out-in" },
   title: "SilkSong Fleas Helper",
   description: "Track missing fleas and view them on the interactive map",
 });
@@ -42,9 +46,6 @@ useHead({
   htmlAttrs: {
     lang: "en",
   },
-  bodyAttrs: {
-    class: "fleas-page",
-  },
   title: "Silksong Flea Helper | Interactive Tracker & Checklist",
   link: [
     {
@@ -71,19 +72,7 @@ useSeoMeta({
 </script>
 
 <style lang="scss">
-body.fleas-page {
-  position: relative;
-  background-color: var(--color-root);
-
-  &:has(.overlay) {
-    overflow: hidden;
-  }
-
-  & div#__nuxt,
-  & div#__nuxt > div {
-    min-height: 100lvh;
-  }
-
+body:has(.fleas-page) {
   --color-root: #0b1a24;
   --color-accent: #c48259;
   --color-button: #ffffff;
@@ -99,8 +88,6 @@ body.fleas-page {
   --color-missing-bg: #7d517433;
   --color-hover-missing-bg: #7b517359;
   --color-active-missing-bg: #7b517347;
-  --color-light: #ffffff;
-  --color-dark: #000000;
 
   --color-hover-bg: #0f202c;
 
