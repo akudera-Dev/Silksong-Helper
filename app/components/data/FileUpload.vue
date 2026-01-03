@@ -5,9 +5,9 @@
     </div>
   </Teleport>
   <section class="file-container container">
-    <FleasFileInfo v-if="isFileUploaded || errorMessage" @clear-errors="clearErrors">
-      {{ errorMessage }}
-    </FleasFileInfo>
+    <DataFileInfo v-if="isFileUploaded || errorMessage" @clear-errors="clearErrors">{{
+      errorMessage
+    }}</DataFileInfo>
     <template v-else>
       <label for="file-upload" class="label">
         <IconsUploadSVG class="label-icon" />
@@ -21,11 +21,21 @@
 
 <script setup lang="ts">
 import { useDropZone } from "@vueuse/core";
+import z from "zod";
+import { fileContextScheme } from "~/schemes/fileData";
+import { useFileData } from "~/stores/fileData";
 import { getDecodedFile } from "~/utils/fileDecode";
-import { useFleasDetails } from "~/stores/fleasDetails";
 
-const fleasDetailsStore = useFleasDetails();
-const { file, fileContext } = storeToRefs(fleasDetailsStore);
+const props = defineProps<{
+  dataUpdate: () => void;
+}>();
+
+onMounted(() => {
+  props.dataUpdate();
+});
+
+const fileDataStore = useFileData();
+const { file, fileContext } = storeToRefs(fileDataStore);
 
 const isFileUploaded = computed(() => !!file.value);
 const errorMessage = ref<string | null>();
@@ -54,14 +64,21 @@ async function fileHandle(files: File[] | null) {
     errorMessage.value = null;
 
     const context = await getDecodedFile(uploadedFile);
+    const parsedContext = fileContextScheme.parse(context);
 
-    if (context) {
+    if (parsedContext) {
       file.value = uploadedFile;
-      fileContext.value = context;
+      fileContext.value = parsedContext;
+      props.dataUpdate();
     }
   } catch (error) {
     console.error(error);
-    errorMessage.value = `Error: File is corrupted or you uploaded not a *.dat file`;
+    if (error instanceof z.ZodError) {
+      errorMessage.value =
+        "Error: It seems to your save file is corrupted. Its structure is broken";
+    } else {
+      errorMessage.value = "Error: File is corrupted or you uploaded not a *.dat file";
+    }
   }
 }
 </script>
@@ -111,13 +128,13 @@ async function fileHandle(files: File[] | null) {
     background-color: var(--color-hover-bg);
   }
 
-  &:has(input:focus) {
+  &:has(input:focus-visible) {
     border-color: var(--color-accent);
     transform: scale(1.01);
   }
 
   &-icon {
-    color: var(--color-accent);
+    color: var(--color-text-accent);
     margin-bottom: 15px;
 
     &--uploading {
@@ -137,7 +154,7 @@ async function fileHandle(files: File[] | null) {
     font-family: var(--font-primary);
     @include fluid-text(14, 16);
     font-weight: 300;
-    color: var(--color-muted);
+    color: var(--color-text-muted);
     text-align: center;
   }
 }

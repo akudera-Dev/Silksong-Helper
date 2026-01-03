@@ -41,6 +41,7 @@ export default defineNuxtConfig({
   routeRules: {
     "/": { redirect: "/fleas" },
     "/fleas": { prerender: true },
+    "/masks": { prerender: true },
   },
   devServer: {
     host: "",

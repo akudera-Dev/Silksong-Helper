@@ -12,29 +12,7 @@ This project is web tool designed to help players of "Hollow Knight: Silksong" t
 
 ## 🛠️ Technical Stack
 
-<div>
-  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">
-    <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"/>
-  </a>
-  <a href="https://sass-lang.com/" target="_blank">
-    <img src="https://img.shields.io/badge/SCSS-CC6699?style=for-the-badge&logo=sass&logoColor=white" alt="SCSS"/>
-  </a>
-  <a href="https://www.typescriptlang.org/" target="_blank">
-    <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"/>
-  </a>
-  <a href="https://nuxt.com/" target="_blank">
-    <img src="https://img.shields.io/badge/Nuxt-002E3B?style=for-the-badge&logo=nuxt&logoColor=00DC82" alt="Nuxt"/>
-  </a>
-  <a href="https://vuejs.org/" target="_blank">
-    <img src="https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white" alt="Vue.js"/>
-  </a>
-  <a href="https://vueuse.org/" target="_blank">
-    <img src="https://img.shields.io/badge/VueUse-647EFF?style=for-the-badge&logo=vueuse&logoColor=white" alt="VueUse"/>
-  </a>
-  <a href="https://pinia.vuejs.org/" target="_blank">
-    <img src="https://img.shields.io/badge/Pinia-F28D1A?style=for-the-badge&logo=pinia&logoColor=white" alt="Pinia"/>
-  </a>
-</div>
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML) [![SCSS](https://img.shields.io/badge/SCSS-CC6699?style=for-the-badge&logo=sass&logoColor=white)](https://sass-lang.com/) [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/) [![Nuxt](https://img.shields.io/badge/Nuxt-002E3B?style=for-the-badge&logo=nuxt&logoColor=00DC82)](https://nuxt.com/) [![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white)](https://vuejs.org/) [![VueUse](https://img.shields.io/badge/VueUse-647EFF?style=for-the-badge&logo=vueuse&logoColor=white)](https://vueuse.org/) [![Pinia](https://img.shields.io/badge/Pinia-F28D1A?style=for-the-badge&logo=pinia&logoColor=white)](https://pinia.vuejs.org/) [![Zod](https://img.shields.io/badge/Zod-3068b7?style=for-the-badge&logo=zod&logoColor=white)](https://zod.dev)
 
 ## 🗺️ Features & Roadmap
 

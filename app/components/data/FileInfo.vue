@@ -1,25 +1,28 @@
 <template>
-  <div class="fleas-info">
+  <div class="file-info">
     <span v-if="!!file" class="save-file">{{ file.name }}</span>
-    <div v-else class="error-message">
-      <slot />
-    </div>
-    <button type="button" class="close-button" @click="closeFileInfo">
+    <div v-else class="error-message"><slot></slot></div>
+    <button
+      type="button"
+      class="close-button"
+      aria-label="Close uploaded file details"
+      @click="closeFileInfo"
+    >
       <IconsCross />
     </button>
   </div>
 </template>
 
 <script setup lang="ts">
-import { useFleasDetails } from "~/stores/fleasDetails";
+import { useFileData } from "~/stores/fileData";
 
-const fleasDetailsStore = useFleasDetails();
-const { file } = storeToRefs(fleasDetailsStore);
+const fileDataStore = useFileData();
+const { file } = storeToRefs(fileDataStore);
 
-const emits = defineEmits(["clearErrors"]);
+const emits = defineEmits(["clear-errors"]);
 
 function closeFileInfo() {
-  emits("clearErrors");
+  emits("clear-errors");
   file.value = null;
 }
 </script>
@@ -27,7 +30,7 @@ function closeFileInfo() {
 <style scoped lang="scss">
 @use "@/styles/mixins.scss" as *;
 
-.fleas-info {
+.file-info {
   @include plate-style;
   display: flex;
   justify-content: space-between;
@@ -40,6 +43,7 @@ function closeFileInfo() {
 }
 
 .error-message {
+  @include fluid-text(16, 18);
   color: var(--color-text-error);
 }
 
@@ -52,7 +56,7 @@ function closeFileInfo() {
   transition: color var(--transition-duration);
 
   @include hover {
-    color: var(--color-accent);
+    color: var(--color-text-accent);
   }
 }
 </style>
